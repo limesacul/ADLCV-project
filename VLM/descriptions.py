@@ -35,10 +35,15 @@ for filename in sorted(os.listdir(image_folder)):
     # Load the image
     images = [Image.open(image_path)]
 
-    # Retrieve metadata and ground truth
-    disease = "Unknown"
+    # Retrieve metadata and ground truth    
     if image_id in ground_truth_dict:
-        disease = max(ground_truth_dict[image_id], key=ground_truth_dict[image_id].get)
+        disease_scores = ground_truth_dict[image_id]
+        
+        # Check if all values are zero
+        if all(value == 0 for value in disease_scores.values()):
+            disease = "Unknown"
+        else:
+            disease = max(disease_scores, key=disease_scores.get)
 
     meta = metadata_dict.get(image_id, {})
     age = meta.get("age_approx", "Unknown")
