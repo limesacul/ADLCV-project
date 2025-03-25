@@ -13,8 +13,8 @@ text_tokenizer = model.get_text_tokenizer()
 visual_tokenizer = model.get_visual_tokenizer()
 
 # Load metadata and ground truth separately
-metadata_df = pd.read_csv('/mnt/data/ISIC_2019_Training_Metadata.csv')
-ground_truth_df = pd.read_csv('/mnt/data/ISIC_2019_Training_GroundTruth.csv')
+metadata_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Metadata.csv')
+ground_truth_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_GroundTruth.csv')
 
 # Convert to dictionaries for fast lookup
 metadata_dict = metadata_df.set_index("image").to_dict(orient="index")
@@ -62,7 +62,7 @@ class MedicalImageDataset(Dataset):
 
 
 # Initialize dataset and dataloader
-img_dir = "/zhome/ec/c/204596/ADLCV-project/data/ISBI2016_ISIC_Part1_Training_Data"
+img_dir = "/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input"
 dataset = MedicalImageDataset(img_dir, metadata_dict, ground_truth_dict, text_tokenizer, visual_tokenizer)
 dataloader = DataLoader(dataset, batch_size=1, shuffle=True)
 

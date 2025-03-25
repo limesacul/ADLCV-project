@@ -1,6 +1,9 @@
 import torch
+from torch.utils.data import Dataset, DataLoader
+import pandas as pd
 from PIL import Image
 from transformers import AutoModelForCausalLM
+
 
 # load model
 model = AutoModelForCausalLM.from_pretrained("AIDC-AI/Ovis2-1B",
@@ -10,15 +13,29 @@ model = AutoModelForCausalLM.from_pretrained("AIDC-AI/Ovis2-1B",
 text_tokenizer = model.get_text_tokenizer()
 visual_tokenizer = model.get_visual_tokenizer()
 
+# Load metadata and ground truth separately
+metadata_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Metadata.csv')
+ground_truth_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_GroundTruth.csv')
+
+# Convert to dictionaries for fast lookup
+metadata_dict = metadata_df.set_index("image").to_dict(orient="index")
+ground_truth_dict = ground_truth_df.set_index("image").to_dict(orient="index")
+
+# Get disease label
+disease = max(ground_truth_dict['ISIC_0000000'], key=ground_truth_dict['ISIC_0000000'].get)  # Highest probability disease
+
+# Get patient metadata
+meta = metadata_dict.get('ISIC_0000000', {})  # Default to empty if missing
+age = meta.get("age_approx", "Unknown")
+sex = meta.get("sex", "Unknown")
+location = meta.get("anatom_site_general", "Unknown")
+
 # single-image input
-image_path = '/zhome/ec/c/204596/ADLCV-project/data/ISBI2016_ISIC_Part1_Training_Data/ISIC_0000000.jpg'
+image_path = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input/ISIC_0000000.jpg'
 images = [Image.open(image_path)]
 max_partition = 9
 text = 'Describe the image.'
-query = f'<image>\n{text}'
-
-
-
+query = f"<image>\nPatient Info: Age {age}, {sex}, Location {location}\nDiagnosed Condition: {disease}\nDescribe the image."
 
 
 # format conversation
