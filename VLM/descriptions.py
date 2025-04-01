@@ -14,15 +14,19 @@ text_tokenizer = model.get_text_tokenizer()
 visual_tokenizer = model.get_visual_tokenizer()
 
 # Load metadata and ground truth
-metadata_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Metadata.csv')
-ground_truth_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_GroundTruth.csv')
+metadata_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_Metadata.csv')
+ground_truth_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_GroundTruth.csv')
 
 # Convert to dictionaries for fast lookup
 metadata_dict = metadata_df.set_index("image").to_dict(orient="index")
 ground_truth_dict = ground_truth_df.set_index("image").to_dict(orient="index")
 
 # Path to folder containing images
-image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
+image_folder = '/work3/lucor/ISIC_2019_Training_Input'
+output_csv = '/zhome/ec/c/204596/ADLCV-project/all_generated_descriptions.csv'
+
+# Store results in a list
+results = []
 
 # Iterate over images in the folder
 for filename in sorted(os.listdir(image_folder)):
@@ -53,7 +57,7 @@ for filename in sorted(os.listdir(image_folder)):
     # Construct query
     query = (
         f"<image>\n"
-        f"Describe the medical image of a {sex.lower()} patient, approximately {age} years old, "
+        f"Describe in english the medical image of a {sex.lower()} patient, approximately {age} years old, "
         f"with a lesion located on the {location.lower()}. The diagnosed condition is {disease}."
     )   
 
@@ -70,14 +74,20 @@ for filename in sorted(os.listdir(image_folder)):
     # Generate output
     with torch.inference_mode():
         gen_kwargs = dict(
-            max_new_tokens=512,
+            max_new_tokens=256,
             do_sample=False,
             eos_token_id=model.generation_config.eos_token_id,
             pad_token_id=text_tokenizer.pad_token_id,
-            use_cache=True,
-            temperature=0.8       # Adds slight randomness
+            use_cache=True
         )
         output_ids = model.generate(input_ids, pixel_values=pixel_values, attention_mask=attention_mask, **gen_kwargs)[0]
         output = text_tokenizer.decode(output_ids, skip_special_tokens=True)
 
-    print(f'Image: {filename}\nOutput:\n{output}\n{"-"*50}')
+    # Append results
+    results.append([image_id, output])
+
+# Save results to CSV
+results_df = pd.DataFrame(results, columns=["image_id", "generated_text"])
+results_df.to_csv(output_csv, index=False, sep='\t')
+
+print(f"Generated descriptions saved to {output_csv}")
