@@ -7,3 +7,4 @@ accelerate
 scipy
 pillow
 huggingface_hub
+datasets

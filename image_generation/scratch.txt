@@ -1,0 +1,1 @@
+scp /Users/maxbrazhnyy/Downloads/... userid@transfer.gbar.dtu.dk:/dtu/blackhole/07/203495/ADLCV-project/data
