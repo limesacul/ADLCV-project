@@ -74,7 +74,7 @@ for filename in sorted(os.listdir(image_folder)):
             do_sample=False,
             eos_token_id=model.generation_config.eos_token_id,
             pad_token_id=text_tokenizer.pad_token_id,
-            use_cache=True
+            use_cache=True,
             temperature=0.8       # Adds slight randomness
         )
         output_ids = model.generate(input_ids, pixel_values=pixel_values, attention_mask=attention_mask, **gen_kwargs)[0]
