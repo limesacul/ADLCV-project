@@ -51,7 +51,11 @@ for filename in sorted(os.listdir(image_folder)):
     location = meta.get("anatom_site_general", "Unknown")
 
     # Construct query
-    query = f"<image>\nPatient Info: Age {age}, {sex}, Location {location}\nDiagnosed Condition: {disease}\nDescribe the image."
+    query = (
+        f"<image>\n"
+        f"Describe the medical image of a {sex.lower()} patient, approximately {age} years old, "
+        f"with a lesion located on the {location.lower()}. The diagnosed condition is {disease}."
+    )   
 
     # Format conversation
     prompt, input_ids, pixel_values = model.preprocess_inputs(query, images, max_partition=9)
@@ -66,11 +70,12 @@ for filename in sorted(os.listdir(image_folder)):
     # Generate output
     with torch.inference_mode():
         gen_kwargs = dict(
-            max_new_tokens=1024,
+            max_new_tokens=512,
             do_sample=False,
             eos_token_id=model.generation_config.eos_token_id,
             pad_token_id=text_tokenizer.pad_token_id,
             use_cache=True
+            temperature=0.8       # Adds slight randomness
         )
         output_ids = model.generate(input_ids, pixel_values=pixel_values, attention_mask=attention_mask, **gen_kwargs)[0]
         output = text_tokenizer.decode(output_ids, skip_special_tokens=True)
