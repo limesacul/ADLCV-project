@@ -1,0 +1,9 @@
+torch
+torchvision
+torchaudio
+diffusers
+transformers
+accelerate
+scipy
+pillow
+huggingface_hub
