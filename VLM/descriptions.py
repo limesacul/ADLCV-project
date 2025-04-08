@@ -14,16 +14,25 @@ text_tokenizer = model.get_text_tokenizer()
 visual_tokenizer = model.get_visual_tokenizer()
 
 # Load metadata and ground truth
-metadata_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_Metadata.csv')
-ground_truth_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_GroundTruth.csv')
+#for full dataset
+#metadata_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_Metadata.csv')
+#ground_truth_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_GroundTruth.csv')
+
+#demo 10
+metadata_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Metadata.csv')
+ground_truth_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_GroundTruth.csv')
 
 # Convert to dictionaries for fast lookup
 metadata_dict = metadata_df.set_index("image").to_dict(orient="index")
 ground_truth_dict = ground_truth_df.set_index("image").to_dict(orient="index")
 
-# Path to folder containing images
-image_folder = '/work3/lucor/ISIC_2019_Training_Input'
-output_csv = '/zhome/ec/c/204596/ADLCV-project/all_generated_descriptions.csv'
+# Path to folder containing images for full dataset
+# image_folder = '/work3/lucor/ISIC_2019_Training_Input'
+# output_csv = '/work3/lucor/all_generated_descriptions.csv'
+
+# Path to folder containing images for trial 10
+image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
+output_csv = '/work3/lucor/trial_generated_descriptions.csv'
 
 # Store results in a list
 results = []
@@ -53,7 +62,7 @@ for filename in sorted(os.listdir(image_folder)):
     age = meta.get("age_approx", "Unknown")
     sex = meta.get("sex", "Unknown")
     location = meta.get("anatom_site_general", "Unknown")
-
+#give detailed description
     # Construct query
     query = (
         f"<image>\n"
@@ -74,7 +83,7 @@ for filename in sorted(os.listdir(image_folder)):
     # Generate output
     with torch.inference_mode():
         gen_kwargs = dict(
-            max_new_tokens=256,
+            max_new_tokens=70,
             do_sample=False,
             eos_token_id=model.generation_config.eos_token_id,
             pad_token_id=text_tokenizer.pad_token_id,
