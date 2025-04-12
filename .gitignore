@@ -3,3 +3,5 @@ outputs/
 data/
 submit.sh
 VLM/submit_vlm.sh
+*.pt
+*.bin
