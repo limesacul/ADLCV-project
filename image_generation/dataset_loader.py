@@ -11,7 +11,8 @@ def load_and_preprocess_dataset(image_dir, csv_path):
     df = pd.read_csv(csv_path, delimiter=';')
 
     # Combine the image paths
-    df['image'] = df['image_id'].apply(lambda x: f"{image_dir}/{x}")
+    df['image'] = df['image_id'].apply(lambda x: f"{image_dir}/{x}.jpg")
+    # print(df['image'][0])
 
     # Check if images exist and filter out missing files
     def check_image_exists(row):

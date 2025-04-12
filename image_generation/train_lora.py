@@ -41,7 +41,7 @@ def train_lora(image_dir, csv_path, output_dir, model_name="runwayml/stable-diff
         for i in range(0, len(dataset), batch_size):
             batch = dataset[i:i+batch_size]
             pixel_values = torch.cat([torch.unsqueeze(torch.tensor(tensor), 0) if not isinstance(tensor, torch.Tensor) else torch.unsqueeze(tensor, 0) for tensor in batch['pixel_values']]).to(device)
-            captions = batch['caption']
+            captions = batch['generated_text']
 
             # Encode captions to get encoder_hidden_states
             text_inputs = pipeline.tokenizer(
@@ -54,12 +54,17 @@ def train_lora(image_dir, csv_path, output_dir, model_name="runwayml/stable-diff
             input_ids = text_inputs.input_ids.to(device)
             encoder_hidden_states = pipeline.text_encoder(input_ids)[0]
 
+            # Convert pixel values to latent space
+            with torch.no_grad():
+                latents = pipeline.vae.encode(pixel_values).latent_dist.sample()  # Encode to latent space
+                atents = latents * 0.18215  # Scale latent values (as required by Stable Diffusion)
+
             # Forward pass
-            noise = torch.randn_like(pixel_values)
-            timesteps = torch.randint(0, 1000, (pixel_values.shape[0],), device=device).long()  # Generate random timesteps
-            noisy_images = pipeline.scheduler.add_noise(pixel_values, noise, timesteps)  # Add noise to images
+            noise = torch.randn_like(latents)  # Generate noise in latent space
+            timesteps = torch.randint(0, 1000, (latents.shape[0],), device=device).long()  # Generate random timesteps
+            noisy_latents = pipeline.scheduler.add_noise(latents, noise, timesteps)  # Add noise to latents
             optimizer.zero_grad()
-            loss = unet(noisy_images, timesteps, encoder_hidden_states=encoder_hidden_states)  # Pass timesteps
+            loss = unet(noisy_latents, timesteps, encoder_hidden_states=encoder_hidden_states)  # Pass timesteps
             loss.backward()
             optimizer.step()
 
@@ -69,4 +74,6 @@ def train_lora(image_dir, csv_path, output_dir, model_name="runwayml/stable-diff
     unet.save_pretrained(output_dir)
 
 if __name__ == "__main__":
-    train_lora("/Users/maxbrazhnyy/GitHub/ADLCV-project/data/ISIC_2019_Training_Input_10img", "/Users/maxbrazhnyy/GitHub/ADLCV-project/data/ISIC_2019_Training_Input_10img/generated_descriptions.csv", "lora_weights")
+    img_dir = "/dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_10img"
+    prompt_dir = "/dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_10img_text/generated_descriptions.csv"
+    train_lora(img_dir, prompt_dir, "lora_weights")
