@@ -32,7 +32,7 @@ ground_truth_dict = ground_truth_df.set_index("image").to_dict(orient="index")
 
 # Path to folder containing images for trial 10
 image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
-output_csv = '/work3/lucor/trial_generated_descriptions.csv'
+output_csv = '/work3/lucor/trial_generated_descriptions1.csv'
 
 # Store results in a list
 results = []
@@ -64,11 +64,17 @@ for filename in sorted(os.listdir(image_folder)):
     location = meta.get("anatom_site_general", "Unknown")
 #give detailed description
     # Construct query
+    
     query = (
-        f"<image>\n"
-        f"Describe in english the medical image of a {sex.lower()} patient, approximately {age} years old, "
-        f"with a lesion located on the {location.lower()}. The diagnosed condition is {disease}."
-    )   
+    f"<image>\n"
+    f"Age: {age}, Sex: {sex.lower()}, Location: {location.lower()}, Condition: {disease}.\n"
+    f"Describe the image. include information on age, sex location, condition."
+)
+    # query = (
+    #     f"<image>\n"
+    #     f"Describe in english the medical image of a {sex.lower()} patient, approximately {age} years old, "
+    #     f"with a lesion located on the {location.lower()}. The diagnosed condition is {disease}. Make it short and consise."
+    # )   
 
     # Format conversation
     prompt, input_ids, pixel_values = model.preprocess_inputs(query, images, max_partition=9)
