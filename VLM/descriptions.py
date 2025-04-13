@@ -6,7 +6,7 @@ from PIL import Image
 from transformers import AutoModelForCausalLM
 
 # Load model
-model = AutoModelForCausalLM.from_pretrained("AIDC-AI/Ovis2-1B",
+model = AutoModelForCausalLM.from_pretrained("AIDC-AI/Ovis2-4B",
                                              torch_dtype=torch.bfloat16,
                                              multimodal_max_length=32768,
                                              trust_remote_code=True).cuda()
@@ -32,7 +32,9 @@ ground_truth_dict = ground_truth_df.set_index("image").to_dict(orient="index")
 
 # Path to folder containing images for trial 10
 image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
-output_csv = '/work3/lucor/trial_generated_descriptions1.csv'
+
+#output of csv
+output_csv = '/work3/lucor/trial_generated_descriptions3.csv'
 
 # Store results in a list
 results = []
@@ -62,19 +64,12 @@ for filename in sorted(os.listdir(image_folder)):
     age = meta.get("age_approx", "Unknown")
     sex = meta.get("sex", "Unknown")
     location = meta.get("anatom_site_general", "Unknown")
-#give detailed description
-    # Construct query
-    
+
     query = (
-    f"<image>\n"
-    f"Age: {age}, Sex: {sex.lower()}, Location: {location.lower()}, Condition: {disease}.\n"
-    f"Describe the image. include information on age, sex location, condition."
-)
-    # query = (
-    #     f"<image>\n"
-    #     f"Describe in english the medical image of a {sex.lower()} patient, approximately {age} years old, "
-    #     f"with a lesion located on the {location.lower()}. The diagnosed condition is {disease}. Make it short and consise."
-    # )   
+        f"<image>\n"
+        f"Describe in english, and in maximum two sentences, the medical image of a {sex.lower()} patient, approximately {age} years old, "
+        f"with a lesion located on the {location.lower()}. The diagnosed condition is {disease}."
+    )   
 
     # Format conversation
     prompt, input_ids, pixel_values = model.preprocess_inputs(query, images, max_partition=9)
