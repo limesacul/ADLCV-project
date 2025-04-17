@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 import pandas as pd
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 from transformers import AutoModelForCausalLM
 
 # Load model
@@ -15,40 +15,51 @@ visual_tokenizer = model.get_visual_tokenizer()
 
 # Load metadata and ground truth
 #for full dataset
-#metadata_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_Metadata.csv')
-#ground_truth_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_GroundTruth.csv')
+metadata_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_Metadata.csv')
+ground_truth_df = pd.read_csv('/work3/lucor/ISIC_2019_Training_GroundTruth.csv')
 
 #demo 10
-metadata_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Metadata.csv')
-ground_truth_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_GroundTruth.csv')
+# metadata_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Metadata.csv')
+# ground_truth_df = pd.read_csv('/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_GroundTruth.csv')
 
 # Convert to dictionaries for fast lookup
 metadata_dict = metadata_df.set_index("image").to_dict(orient="index")
 ground_truth_dict = ground_truth_df.set_index("image").to_dict(orient="index")
 
 # Path to folder containing images for full dataset
-# image_folder = '/work3/lucor/ISIC_2019_Training_Input'
-# output_csv = '/work3/lucor/all_generated_descriptions.csv'
+image_folder = '/work3/lucor/ISIC_2019_Training_Input'
 
 # Path to folder containing images for trial 10
-image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
+# image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
 
 #output of csv
-output_csv = '/work3/lucor/trial_generated_descriptions3.csv'
+output_csv = '/work3/lucor/full_generated_descriptions.csv'
 
 # Store results in a list
 results = []
+
+# Limit the number of images to process
+MAX_IMAGES = 5000
+processed = 0
 
 # Iterate over images in the folder
 for filename in sorted(os.listdir(image_folder)):
     if not filename.endswith(".jpg"):
         continue  # Skip non-image files
 
+    if processed >= MAX_IMAGES:
+        break  # Stop after processing MAX_IMAGES
+
     image_id = os.path.splitext(filename)[0]  # Extract ID without extension
     image_path = os.path.join(image_folder, filename)
-    
+
     # Load the image
-    images = [Image.open(image_path)]
+    image = Image.open(image_path)
+
+    # Resize to fit within 448x448, maintaining the aspect ratio (no padding)
+    image = ImageOps.contain(image, (448, 448))
+
+    images = [image]  # List to pass to the model
 
     # Retrieve metadata and ground truth    
     if image_id in ground_truth_dict:
@@ -61,15 +72,15 @@ for filename in sorted(os.listdir(image_folder)):
             disease = max(disease_scores, key=disease_scores.get)
 
     meta = metadata_dict.get(image_id, {})
-    age = meta.get("age_approx", "Unknown")
-    sex = meta.get("sex", "Unknown")
-    location = meta.get("anatom_site_general", "Unknown")
+    age = str(meta.get("age_approx", "Unknown"))
+    sex = str(meta.get("sex", "Unknown")).lower()
+    location = str(meta.get("anatom_site_general", "Unknown")).lower()
 
     query = (
         f"<image>\n"
-        f"Describe in english, and in maximum two sentences, the medical image of a {sex.lower()} patient, approximately {age} years old, "
-        f"with a lesion located on the {location.lower()}. The diagnosed condition is {disease}."
-    )   
+        f"Describe in english, and in maximum two sentences, the medical image of a {sex} patient, approximately {age} years old, "
+        f"with a lesion located on the {location}. The diagnosed condition is {disease}."
+    )
 
     # Format conversation
     prompt, input_ids, pixel_values = model.preprocess_inputs(query, images, max_partition=9)
@@ -95,6 +106,7 @@ for filename in sorted(os.listdir(image_folder)):
 
     # Append results
     results.append([image_id, output])
+    processed += 1  # Increment counter
 
 # Save results to CSV
 results_df = pd.DataFrame(results, columns=["image_id", "generated_text"])
