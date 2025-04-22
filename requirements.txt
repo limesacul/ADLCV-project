@@ -1,6 +1,8 @@
 torch
 torchvision
 torchaudio
+torchmetrics
+torch-fidelity
 diffusers
 transformers
 accelerate
@@ -8,3 +10,4 @@ scipy
 pillow
 huggingface_hub
 peft
+scikit-image

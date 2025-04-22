@@ -5,3 +5,5 @@ submit.sh
 VLM/submit_vlm.sh
 *.pt
 *.bin
+image_generation/*.sh
+image_generation/results*
