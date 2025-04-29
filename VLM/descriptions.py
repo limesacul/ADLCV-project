@@ -33,22 +33,22 @@ image_folder = '/work3/lucor/ISIC_2019_Training_Input'
 # image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
 
 #output of csv
-output_csv = '/work3/lucor/full_generated_descriptions.csv'
+output_csv = '/work3/lucor/test_moreexamples.csv'
 
 # Store results in a list
 results = []
 
-# Limit the number of images to process
-MAX_IMAGES = 5000
-processed = 0
+#Limit the number of images to process
+# MAX_IMAGES = 20
+# processed = 0
 
 # Iterate over images in the folder
 for filename in sorted(os.listdir(image_folder)):
     if not filename.endswith(".jpg"):
         continue  # Skip non-image files
 
-    if processed >= MAX_IMAGES:
-        break  # Stop after processing MAX_IMAGES
+    # if processed >= MAX_IMAGES:
+    #     break  # Stop after processing MAX_IMAGES
 
     image_id = os.path.splitext(filename)[0]  # Extract ID without extension
     image_path = os.path.join(image_folder, filename)
@@ -76,10 +76,30 @@ for filename in sorted(os.listdir(image_folder)):
     sex = str(meta.get("sex", "Unknown")).lower()
     location = str(meta.get("anatom_site_general", "Unknown")).lower()
 
+    # query = (
+    #     f"<image>\n"
+    #     f"Describe in english, and in maximum two sentences, the medical image of a {sex} patient, approximately {age} years old, "
+    #     f"with a lesion located on the {location}. The diagnosed condition is {disease}."
+    # )
+
     query = (
         f"<image>\n"
-        f"Describe in english, and in maximum two sentences, the medical image of a {sex} patient, approximately {age} years old, "
-        f"with a lesion located on the {location}. The diagnosed condition is {disease}."
+        f"Convert {sex}'s {age}y/o {location} lesion ({disease}) into concise JSON values. "
+        f"Order: [age, gender, location, disease, visual_description]. "
+        f"Description: 25-30 word factual observation. No explanations, adverbs, or hedging. "
+        f"Format: [num, str, str, str, str]. No keys. "
+        f"Examples:"
+        f"[55.0,female,anterior torso,NV,'irregular dark brown lesion with variegated pigmentation, slightly raised surface, and fuzzy borders, surrounded by pale halo'], "
+        f"[34, female, leg, NV, 'Symmetrical oval lesion with uniform light brown pigmentation, regular network pattern at periphery, faint central hypopigmentation, 5mm diameter'], "
+        f"[71, male, face, BCC, 'pearly pink plaque with arborizing telangiectasia, rolled borders, central ulceration covered by crust, 15mm largest dimension'],"
+        f"[58, male, back, MEL, 'highly irregular lesion with jagged borders showing uneven distribution of dark brown, black, and reddish tones, with scattered blue-gray areas and subtle white scar-like patches'],"
+        f"[32, female, arm, NV, 'uniform tan-brown oval lesion with delicate pigment network radiating from center, smooth surface texture, and gradual fading at edges'],"
+        f"[71, male, nose, BCC, 'shiny pinkish-white nodule with fine branching blood vessels, translucent pearly border, and small central crust surrounded by rolled edges'],"
+        f"[65, female, cheek, AK, 'rough-textured pinkish patch with gritty yellow-white scale that feels like sandpaper, on sun-damaged skin showing surrounding telangiectasia'],"
+        f"[60, male, chest, BKL, 'slightly elevated waxy brown plaque with cracked surface resembling dried paint, showing stuck-on appearance with sharp demarcation from surrounding skin'],"
+        f"[45, female, leg, DF, 'firm dome-shaped nodule with characteristic dimpling when pinched, displaying tan-brown periphery and darker central zone with subtle scale'],"
+        f"[50, male, lip, VASC, 'vivid red rubbery papule with smooth glassy surface and radiating blood vessels at periphery, blanching partially under pressure'],"
+        f"[68, female, ear, SCC, 'thickened scaly growth with uneven crusted surface showing areas of yellowish keratin and focal bright red erosions']"
     )
 
     # Format conversation
@@ -106,7 +126,7 @@ for filename in sorted(os.listdir(image_folder)):
 
     # Append results
     results.append([image_id, output])
-    processed += 1  # Increment counter
+    # processed += 1  # Increment counter
 
 # Save results to CSV
 results_df = pd.DataFrame(results, columns=["image_id", "generated_text"])
