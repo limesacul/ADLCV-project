@@ -2,4 +2,5 @@ log/
 outputs/
 data/
 submit.sh
+diffusers/
 VLM/submit_vlm.sh
