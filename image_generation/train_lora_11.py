@@ -12,11 +12,11 @@ def train_lora(
     image_dir, 
     csv_path, 
     output_dir, 
-    model_name="runwayml/stable-diffusion-v1-5", 
-    rank=16, 
+    model_name="stabilityai/stable-diffusion-2-1", 
+    rank=4, 
     learning_rate=1e-4, 
     batch_size=1, 
-    epochs=10):
+    epochs=5):
 
     # Load dataset
     dataset = load_and_preprocess_dataset(image_dir, csv_path)
@@ -108,7 +108,7 @@ def train_lora(
 
 if __name__ == "__main__":
     img_dir = "/dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train/images"
-    prompt_dir = "/dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train_descriptions.csv"
+    prompt_dir = "/dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train_descriptions10.csv"
     print("Training images:", img_dir)
     print("Training csv:", prompt_dir)
     train_lora(img_dir, prompt_dir, "/dtu/blackhole/07/203495/ADLCV-project/image_generation/lora_models")

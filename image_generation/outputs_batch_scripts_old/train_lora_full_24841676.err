@@ -1,0 +1,7 @@
+ERROR: Unable to locate a modulefile for 'python/3.8.20'
+Loaded module: cuda/11.8
+Map:   0%|          | 0/10 [00:00<?, ? examples/s]Map: 100%|██████████| 10/10 [00:00<00:00, 30.87 examples/s]Map: 100%|██████████| 10/10 [00:00<00:00, 30.62 examples/s]
+Filter:   0%|          | 0/10 [00:00<?, ? examples/s]Filter: 100%|██████████| 10/10 [00:02<00:00,  3.60 examples/s]Filter: 100%|██████████| 10/10 [00:02<00:00,  3.60 examples/s]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  3.80it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00,  6.81it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:00<00:00, 11.87it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:00<00:00, 10.08it/s]
+/dtu/blackhole/07/203495/miniconda/envs/diffusers-env/lib/python3.8/site-packages/torch/utils/checkpoint.py:1399: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with device_autocast_ctx, torch.cpu.amp.autocast(**cpu_autocast_kwargs), recompute_context:  # type: ignore[attr-defined]

@@ -13,10 +13,10 @@ def train_lora(
     csv_path, 
     output_dir, 
     model_name="runwayml/stable-diffusion-v1-5", 
-    rank=16, 
-    learning_rate=1e-4, 
+    rank=4, 
+    learning_rate=1e-5, 
     batch_size=1, 
-    epochs=10):
+    epochs=7):
 
     # Load dataset
     dataset = load_and_preprocess_dataset(image_dir, csv_path)

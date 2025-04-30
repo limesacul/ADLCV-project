@@ -1,0 +1,3 @@
+Training images: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train/images
+Training csv: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train_descriptions.csv
+Columns in CSV: Index(['image_id', 'generated_text'], dtype='object')

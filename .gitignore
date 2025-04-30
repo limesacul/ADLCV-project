@@ -7,3 +7,5 @@ VLM/submit_vlm.sh
 *.bin
 image_generation/*.sh
 image_generation/results*
+image_generation/ddpm
+image_generation/lora_weights*

@@ -1,0 +1,451 @@
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841865> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841866> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841867> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841868> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841869> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841870> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841871> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841872> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841873> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841874> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841875> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841876> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841877> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841878> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841879> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841880> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841881> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841882> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841883> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841884> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841885> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841886> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841887> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841888> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841889> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841890> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841891> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841892> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841893> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841894> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841895> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841896> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841897> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841898> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841899> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841900> is submitted to queue <gpua40>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841901> is submitted to queue <gpua100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841902> is submitted to queue <gpuv100>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841903> is submitted to queue <gpua10>.
+bsub info: Job has no wall-clock time! Setting it to 15 minutes!
+bsub info: Job has no memory requirements! Setting it to 1024 MB!
+bsub info:   You need to specify at least -R "rusage[mem=...]"!
+bsub info: You need to request at least 4 cores per GPU!
+bsub info: Read more about this: https://www.hpc.dtu.dk/?page_id=4976.
+bsub info:   We fixed that for you ... but you should really update
+bsub info:   your job script!
+bsub info: Parallel job without span[...] info! Assuming hosts=1 (SMP job)!
+bsub info:   Add -R "span[...]" to your job script, to avoid this message!
+Job <24841904> is submitted to queue <gpua40>.
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24841864: <NONAME> in cluster <dcc> Done
+
+Job <NONAME> was submitted from host <n-62-12-19> by user <s233350> in cluster <dcc> at Thu May  1 01:03:30 2025
+Job was executed on host(s) <n-62-31-2>, in queue <hpc>, as user <s233350> in cluster <dcc> at Thu May  1 01:03:32 2025
+</zhome/dc/f/203495> was used as the home directory.
+</dtu/blackhole/07/203495/ADLCV-project> was used as the working directory.
+Started at Thu May  1 01:03:32 2025
+Terminated at Thu May  1 01:03:44 2025
+Results reported at Thu May  1 01:03:44 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+QUEUES=("gpua100" "gpuv100" "gpua10" "gpua40")
+
+for MODEL_NUM in $(seq -w 01 10); do
+  for i in {0..3}; do
+    QUEUE=${QUEUES[$i]}
+    bsub -q $QUEUE \
+      -gpu "num=1:mode=exclusive_process" \
+      -J train_lora_${MODEL_NUM} \
+      -o /dtu/blackhole/07/203495/ADLCV-project/image_generation/outputs_batch_scripts/train_lora_${MODEL_NUM}_%J.out \
+      -e /dtu/blackhole/07/203495/ADLCV-project/image_generation/outputs_batch_scripts/train_lora_${MODEL_NUM}_%J.err \
+      bash /dtu/blackhole/07/203495/ADLCV-project/image_generation/submit_job_train_lora.sh $MODEL_NUM $QUEUE
+  done
+done
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   9.15 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   41 sec.
+    Turnaround time :                            14 sec.
+
+The output (if any) is above this job summary.
+

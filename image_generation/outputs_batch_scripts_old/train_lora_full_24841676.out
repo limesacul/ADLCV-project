@@ -1,0 +1,122 @@
+Training images: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input
+Training csv: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input/generated_descriptions_isic_10_v2.csv
+Columns in CSV: Index(['image_id', 'generated_text'], dtype='object')
+Number of valid images with descriptions loaded: 10
+Using device: cuda
+Epoch 1, Step 1, Loss: 0.0028154694009572268
+Epoch 1, Step 2, Loss: 0.2291470319032669
+Epoch 1, Step 3, Loss: 0.06323365867137909
+Epoch 1, Step 4, Loss: 0.5145516395568848
+Epoch 1, Step 5, Loss: 0.039529480040073395
+Epoch 1, Step 6, Loss: 0.486036092042923
+Epoch 1, Step 7, Loss: 0.1250154972076416
+Epoch 1, Step 8, Loss: 0.06647743284702301
+Epoch 1, Step 9, Loss: 0.10460717231035233
+Epoch 1, Step 10, Loss: 0.0026337881572544575
+Epoch 2, Step 1, Loss: 0.38352978229522705
+Epoch 2, Step 2, Loss: 0.504630982875824
+Epoch 2, Step 3, Loss: 0.0902174860239029
+Epoch 2, Step 4, Loss: 0.1893809735774994
+Epoch 2, Step 5, Loss: 0.09201576560735703
+Epoch 2, Step 6, Loss: 0.6466121077537537
+Epoch 2, Step 7, Loss: 0.014688576571643353
+Epoch 2, Step 8, Loss: 0.009095373563468456
+Epoch 2, Step 9, Loss: 0.209239661693573
+Epoch 2, Step 10, Loss: 0.01978399232029915
+Epoch 3, Step 1, Loss: 0.0719321072101593
+Epoch 3, Step 2, Loss: 0.07990823686122894
+Epoch 3, Step 3, Loss: 0.1133742481470108
+Epoch 3, Step 4, Loss: 0.23363222181797028
+Epoch 3, Step 5, Loss: 0.013598316349089146
+Epoch 3, Step 6, Loss: 0.0019780793227255344
+Epoch 3, Step 7, Loss: 0.047346584498882294
+Epoch 3, Step 8, Loss: 0.003731000702828169
+Epoch 3, Step 9, Loss: 0.08207425475120544
+Epoch 3, Step 10, Loss: 0.10216937959194183
+Epoch 4, Step 1, Loss: 0.0891588032245636
+Epoch 4, Step 2, Loss: 0.010245252400636673
+Epoch 4, Step 3, Loss: 0.3454195261001587
+Epoch 4, Step 4, Loss: 0.17620497941970825
+Epoch 4, Step 5, Loss: 0.004995472729206085
+Epoch 4, Step 6, Loss: 0.004464465193450451
+Epoch 4, Step 7, Loss: 0.007997866719961166
+Epoch 4, Step 8, Loss: 0.009183105081319809
+Epoch 4, Step 9, Loss: 0.16506142914295197
+Epoch 4, Step 10, Loss: 0.08391893655061722
+Epoch 5, Step 1, Loss: 0.004099542275071144
+Epoch 5, Step 2, Loss: 0.030813327059149742
+Epoch 5, Step 3, Loss: 0.0024894061498343945
+Epoch 5, Step 4, Loss: 0.8240655660629272
+Epoch 5, Step 5, Loss: 0.009420158341526985
+Epoch 5, Step 6, Loss: 0.004911367781460285
+Epoch 5, Step 7, Loss: 0.16894204914569855
+Epoch 5, Step 8, Loss: 0.033500559628009796
+Epoch 5, Step 9, Loss: 0.006638368591666222
+Epoch 5, Step 10, Loss: 0.0925881639122963
+Model saved at: /dtu/blackhole/07/203495/ADLCV-project/image_generation/lora_models/lora_model_20250430_232458
+Training parameters saved at: /dtu/blackhole/07/203495/ADLCV-project/image_generation/lora_models/lora_model_20250430_232458/lora_model_20250430_232458_params.txt
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24841676: <train_lora_full> in cluster <dcc> Done
+
+Job <train_lora_full> was submitted from host <gbarlogin2> by user <s233350> in cluster <dcc> at Wed Apr 30 23:12:41 2025
+Job was executed on host(s) <8*n-62-20-13>, in queue <gpuv100>, as user <s233350> in cluster <dcc> at Wed Apr 30 23:24:02 2025
+</zhome/dc/f/203495> was used as the home directory.
+</dtu/blackhole/07/203495> was used as the working directory.
+Started at Wed Apr 30 23:24:02 2025
+Terminated at Wed Apr 30 23:24:59 2025
+Results reported at Wed Apr 30 23:24:59 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -q gpuv100                           # Queue name (Tesla A100 GPUs)
+#BSUB -J train_lora_full                   # Job name
+#BSUB -n 8                                 # Number of CPU cores
+#BSUB -R "span[hosts=1]"                    # Ensure all cores are on the same host
+#BSUB -gpu "num=1:mode=exclusive_process"   # Request 1 GPU with exclusive access
+#BSUB -W 24:00                              # Wall time limit (12 hours)
+#BSUB -R "rusage[mem=32GB]"                 # Memory request
+#BSUB -o /dtu/blackhole/07/203495/ADLCV-project/image_generation/outputs_batch_scripts/train_lora_full_%J.out          # Standard output file
+#BSUB -e /dtu/blackhole/07/203495/ADLCV-project/image_generation/outputs_batch_scripts/train_lora_full_%J.err          # Standard error file
+
+# Load necessary modules
+module load python/3.8.20
+module load cuda/11.8
+
+# Activate the Conda environment
+source /dtu/blackhole/07/203495/miniconda/etc/profile.d/conda.sh
+conda activate diffusers-env
+# Set the working directory
+cd /dtu/blackhole/07/203495/ADLCV-project
+# Run the Python script
+python /dtu/blackhole/07/203495/ADLCV-project/image_generation/train_lora.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   52.70 sec.
+    Max Memory :                                 459 MB
+    Average Memory :                             459.00 MB
+    Total Requested Memory :                     262144.00 MB
+    Delta Memory :                               261685.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   57 sec.
+    Turnaround time :                            738 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </dtu/blackhole/07/203495/ADLCV-project/image_generation/outputs_batch_scripts/train_lora_full_24841676.err> for stderr output of this job.
+

@@ -1,0 +1,75 @@
+ERROR: Unable to locate a modulefile for 'python/3.8.20'
+Loaded module: cuda/11.8
+Training images: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train/images
+Training csv: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train_descriptions.csv
+Columns in CSV: Index(['image_id', 'generated_text'], dtype='object')
+Map:   0%|          | 0/20264 [00:00<?, ? examples/s]/dtu/blackhole/07/203495/ADLCV-project/image_generation/submit_job_train_lora.sh: line 24: 1031275 Killed                  python /dtu/blackhole/07/203495/ADLCV-project/image_generation/train_lora_${MODEL_NUM}.py
+ERROR: Unable to locate a modulefile for 'python/3.8.20'
+Loaded module: cuda/11.8
+Training images: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train/images
+Training csv: /dtu/blackhole/07/203495/ADLCV-project/data/ISIC_2019_Training_Input_split/train_descriptions.csv
+Columns in CSV: Index(['image_id', 'generated_text'], dtype='object')
+Map:   0%|          | 0/20264 [00:00<?, ? examples/s]/dtu/blackhole/07/203495/ADLCV-project/image_generation/submit_job_train_lora.sh: line 24: 1031319 Killed                  python /dtu/blackhole/07/203495/ADLCV-project/image_generation/train_lora_${MODEL_NUM}.py
+ERROR: Unable to locate a modulefile for 'python/3.8.20'
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/blackhole/07/203495/ADLCV-project/image_generation/train_lora_01.py", line 3, in <module>
+    from diffusers import StableDiffusionPipeline, DDPMScheduler
+  File "/dtu/blackhole/07/203495/miniconda/envs/diffusers-env/lib/python3.8/site-packages/diffusers/__init__.py", line 5, in <module>
+    from .utils import (
+  File "/dtu/blackhole/07/203495/miniconda/envs/diffusers-env/lib/python3.8/site-packages/diffusers/utils/__init__.py", line 41, in <module>
+    from .export_utils import export_to_gif, export_to_obj, export_to_ply, export_to_video
+  File "/dtu/blackhole/07/203495/miniconda/envs/diffusers-env/lib/python3.8/site-packages/diffusers/utils/export_utils.py", line 8, in <module>
+    import numpy as np
+  File "/dtu/blackhole/07/203495/miniconda/envs/diffusers-env/lib/python3.8/site-packages/numpy/__init__.py", line 358, in <module>
+    _sanity_check()
+  File "/dtu/blackhole/07/203495/miniconda/envs/diffusers-env/lib/python3.8/site-packages/numpy/__init__.py", line 348, in _sanity_check
+    if not abs(x.dot(x) - float32(2.0)) < 1e-5:
+KeyboardInterrupt
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24841909: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <gbarlogin2> by user <s233350> in cluster <dcc> at Thu May  1 01:10:25 2025
+Job was executed on host(s) <n-62-31-2>, in queue <hpc>, as user <s233350> in cluster <dcc> at Thu May  1 01:10:26 2025
+</zhome/dc/f/203495> was used as the home directory.
+</dtu/blackhole/07/203495/ADLCV-project> was used as the working directory.
+Started at Thu May  1 01:10:26 2025
+Terminated at Thu May  1 01:10:59 2025
+Results reported at Thu May  1 01:10:59 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+QUEUES=("gpua100" "gpuv100" "gpua10" "gpua40")
+
+for MODEL_NUM in $(seq -w 01 02); do
+  for i in {0..3}; do
+    QUEUE=${QUEUES[$i]}
+      bash /dtu/blackhole/07/203495/ADLCV-project/image_generation/submit_job_train_lora.sh $MODEL_NUM $QUEUE
+  done
+done
+------------------------------------------------------------
+
+TERM_MEMLIMIT: job killed after reaching LSF memory usage limit.
+Exited with exit code 130.
+
+Resource usage summary:
+
+    CPU time :                                   24.95 sec.
+    Max Memory :                                 1024 MB
+    Average Memory :                             751.67 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               0.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                6
+    Run time :                                   74 sec.
+    Turnaround time :                            34 sec.
+
+The output (if any) is above this job summary.
+

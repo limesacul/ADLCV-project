@@ -13,7 +13,7 @@ def train_lora(
     csv_path, 
     output_dir, 
     model_name="runwayml/stable-diffusion-v1-5", 
-    rank=16, 
+    rank=8, 
     learning_rate=1e-4, 
     batch_size=1, 
     epochs=10):

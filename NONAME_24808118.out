@@ -1,0 +1,38 @@
+/bin/bash: line 1: /dtu/blackhole/07/203495/ADLCV-project/image_generation/submit_job_train_lora.sh: Permission denied
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24808118: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s233350> in cluster <dcc> at Sat Apr 26 15:53:24 2025
+Job was executed on host(s) <n-62-31-4>, in queue <hpc>, as user <s233350> in cluster <dcc> at Sat Apr 26 15:53:26 2025
+</zhome/dc/f/203495> was used as the home directory.
+</dtu/blackhole/07/203495/ADLCV-project> was used as the working directory.
+Started at Sat Apr 26 15:53:26 2025
+Terminated at Sat Apr 26 15:53:28 2025
+Results reported at Sat Apr 26 15:53:28 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/dtu/blackhole/07/203495/ADLCV-project/image_generation/submit_job_train_lora.sh
+------------------------------------------------------------
+
+Exited with exit code 126.
+
+Resource usage summary:
+
+    CPU time :                                   2.06 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   100 sec.
+    Turnaround time :                            4 sec.
+
+The output (if any) is above this job summary.
+
