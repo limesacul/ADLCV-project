@@ -33,22 +33,22 @@ image_folder = '/work3/lucor/ISIC_2019_Training_Input'
 # image_folder = '/zhome/ec/c/204596/ADLCV-project/data/ISIC_2019_Training_Input'
 
 #output of csv
-output_csv = '/work3/lucor/test_moreexamples.csv'
+output_csv = '/work3/lucor/training_10k.csv'
 
 # Store results in a list
 results = []
 
 #Limit the number of images to process
-# MAX_IMAGES = 20
-# processed = 0
+MAX_IMAGES = 10000
+processed = 0
 
 # Iterate over images in the folder
 for filename in sorted(os.listdir(image_folder)):
     if not filename.endswith(".jpg"):
         continue  # Skip non-image files
 
-    # if processed >= MAX_IMAGES:
-    #     break  # Stop after processing MAX_IMAGES
+    if processed >= MAX_IMAGES:
+        break  # Stop after processing MAX_IMAGES
 
     image_id = os.path.splitext(filename)[0]  # Extract ID without extension
     image_path = os.path.join(image_folder, filename)
@@ -126,7 +126,7 @@ for filename in sorted(os.listdir(image_folder)):
 
     # Append results
     results.append([image_id, output])
-    # processed += 1  # Increment counter
+    processed += 1  # Increment counter
 
 # Save results to CSV
 results_df = pd.DataFrame(results, columns=["image_id", "generated_text"])
